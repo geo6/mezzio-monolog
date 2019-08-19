@@ -1,0 +1,32 @@
+{
+    "name": "geo6/zend-expressive-monolog",
+    "type": "library",
+    "description": "Zend Expressive Monolog ErrorHandler",
+    "license": "GPL-3.0-or-later",
+    "require": {
+        "monolog/monolog": "^1.24",
+        "zendframework/zend-expressive": "^3.2",
+        "zendframework/zend-servicemanager": "^3.4"
+    },
+    "require-dev": {
+        "phpstan/phpstan": "^0.11.15",
+        "phpstan/phpstan-strict-rules": "^0.11.1",
+        "squizlabs/php_codesniffer": "^3.4"
+    },
+    "suggest": {
+        "sentry/sdk": "Allow sending log messages to Sentry.io"
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "autoload": {
+        "psr-4": {
+            "Geo6\\Expressive\\Monolog\\": "src/"
+        }
+    },
+    "scripts": {
+        "analyze": "phpstan analyze -l max -c ./phpstan.installer.neon ./src",
+        "cs-check": "phpcs",
+        "cs-fix": "phpcbf"
+    }
+}
