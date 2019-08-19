@@ -4,12 +4,11 @@ namespace Geo6\Expressive\Monolog\Handler;
 
 use Monolog\Handler\AbstractProcessingHandler;
 use Monolog\Logger;
-use Sentry\State\Scope;
-use Sentry\Severity;
-use Throwable;
-
-use function Sentry\withScope;
 use function Sentry\captureEvent;
+use Sentry\Severity;
+use Sentry\State\Scope;
+use function Sentry\withScope;
+use Throwable;
 
 class SentryHandler extends AbstractProcessingHandler
 {

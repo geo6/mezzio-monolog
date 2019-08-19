@@ -3,8 +3,8 @@
 namespace Geo6\Expressive\Monolog\Listener;
 
 use Geo6\Expressive\Monolog\Handler\SentryHandler;
-use Monolog\Logger;
 use Monolog\Handler\StreamHandler;
+use Monolog\Logger;
 use Monolog\Processor\GitProcessor;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
