@@ -12,6 +12,12 @@ Currently, there are 2 handlers supported (more will be added if needed):
 - [`StreamHandler`](https://github.com/Seldaek/monolog/blob/master/src/Monolog/Handler/StreamHandler.php): Logs records into any PHP stream, use this for log files.
 - [`SentryHandler`](https://github.com/geo6/zend-expressive-monolog/blob/master/src/Handler/SentryHandler.php): Logs records to [Sentry.io](https://sentry.io/) (requires `sentry/sdk` package).
 
+## Install
+
+```
+composer require geo6/zend-expressive-monolog
+```
+
 ## Configuration
 
 Create a `monolog.global.php` file in your `config` directory:
