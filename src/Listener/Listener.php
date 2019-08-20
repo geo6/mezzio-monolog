@@ -65,6 +65,11 @@ class Listener
         }
     }
 
+    public function isEnabled(): bool
+    {
+        return $this->debug === false;
+    }
+
     /**
      * Adds a log record at an arbitrary level.
      *

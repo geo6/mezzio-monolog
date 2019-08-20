@@ -17,7 +17,10 @@ class ListenerDelegator implements DelegatorFactoryInterface
 
         /** @var \Zend\Stratigility\Middleware\ErrorHandler $errorHandler */
         $errorHandler = $callback();
-        $errorHandler->attachListener($listener);
+
+        if ($listener->isEnabled() === true) {
+            $errorHandler->attachListener($listener);
+        }
 
         return $errorHandler;
     }
