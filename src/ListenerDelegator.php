@@ -1,10 +1,10 @@
 <?php
 
-namespace Geo6\Expressive\Monolog;
+namespace Geo6\Mezzio\Monolog;
 
-use Geo6\Expressive\Monolog\Listener\Listener;
+use Geo6\Mezzio\Monolog\Listener\Listener;
 use Interop\Container\ContainerInterface;
-use Zend\ServiceManager\Factory\DelegatorFactoryInterface;
+use Laminas\ServiceManager\Factory\DelegatorFactoryInterface;
 
 class ListenerDelegator implements DelegatorFactoryInterface
 {
@@ -15,7 +15,7 @@ class ListenerDelegator implements DelegatorFactoryInterface
     {
         $listener = $container->get(Listener::class);
 
-        /** @var \Zend\Stratigility\Middleware\ErrorHandler $errorHandler */
+        /** @var \Laminas\Stratigility\Middleware\ErrorHandler $errorHandler */
         $errorHandler = $callback();
 
         if ($listener->isEnabled() === true) {

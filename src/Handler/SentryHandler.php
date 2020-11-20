@@ -1,6 +1,6 @@
 <?php
 
-namespace Geo6\Expressive\Monolog\Handler;
+namespace Geo6\Mezzio\Monolog\Handler;
 
 use Monolog\Handler\AbstractProcessingHandler;
 use Monolog\Logger;

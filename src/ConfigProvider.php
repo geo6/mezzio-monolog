@@ -1,8 +1,8 @@
 <?php
 
-namespace Geo6\Expressive\Monolog;
+namespace Geo6\Mezzio\Monolog;
 
-use Zend\Stratigility\Middleware\ErrorHandler;
+use Laminas\Stratigility\Middleware\ErrorHandler;
 
 class ConfigProvider
 {

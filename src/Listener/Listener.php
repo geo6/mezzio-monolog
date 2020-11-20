@@ -1,8 +1,8 @@
 <?php
 
-namespace Geo6\Expressive\Monolog\Listener;
+namespace Geo6\Mezzio\Monolog\Listener;
 
-use Geo6\Expressive\Monolog\Handler\SentryHandler;
+use Geo6\Mezzio\Monolog\Handler\SentryHandler;
 use Monolog\Handler\StreamHandler;
 use Monolog\Logger;
 use Monolog\Processor\GitProcessor;

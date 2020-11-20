@@ -1,9 +1,9 @@
 <?php
 
-namespace Geo6\Expressive\Monolog\Listener;
+namespace Geo6\Mezzio\Monolog\Listener;
 
 use Interop\Container\ContainerInterface;
-use Zend\ServiceManager\Factory\FactoryInterface;
+use Laminas\ServiceManager\Factory\FactoryInterface;
 
 class ListenerFactory implements FactoryInterface
 {
