@@ -4,28 +4,30 @@ namespace Geo6\Mezzio\Monolog\Handler;
 
 use Monolog\Handler\AbstractProcessingHandler;
 use Monolog\Logger;
-use function Sentry\captureEvent;
+use Sentry\Event;
+use Sentry\EventHint;
 use Sentry\Severity;
 use Sentry\State\Scope;
-use function Sentry\withScope;
 use Throwable;
+
+use function Sentry\captureEvent;
+use function Sentry\withScope;
 
 class SentryHandler extends AbstractProcessingHandler
 {
     protected function write(array $record): void
     {
-        $payload = [
-            'level'   => self::getSeverityFromLevel($record['level']),
-            'message' => $record['message'],
-        ];
+        $event = Event::createEvent();
+        $event->setMessage($record['message']);
+        $event->setLevel(self::getSeverityFromLevel($record['level']));
 
         if (isset($record['context']['exception']) && $record['context']['exception'] instanceof Throwable) {
-            $payload['exception'] = $record['context']['exception'];
+            $hint = EventHint::fromArray(['exception' => $record['context']['exception']]);
 
             unset($record['context']['exception']);
         }
 
-        withScope(function (Scope $scope) use ($record, $payload) {
+        withScope(function (Scope $scope) use ($record, $event) {
             // $scope->clear();
 
             $scope->setExtra('monolog.channel', $record['channel']);
@@ -51,7 +53,7 @@ class SentryHandler extends AbstractProcessingHandler
                 }
             }
 
-            captureEvent($payload);
+            captureEvent($event, $hint ?? null);
         });
     }
 
