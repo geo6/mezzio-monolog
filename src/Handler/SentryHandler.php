@@ -21,7 +21,7 @@ class SentryHandler extends AbstractProcessingHandler
         $event->setMessage($record['message']);
         $event->setLevel(self::getSeverityFromLevel($record['level']));
 
-        withScope(function (Scope $scope) use ($record, $event) {
+        withScope(function (Scope $scope) use ($record, $event): void {
             // $scope->clear();
 
             if (isset($record['context']['exception']) && $record['context']['exception'] instanceof Throwable) {
