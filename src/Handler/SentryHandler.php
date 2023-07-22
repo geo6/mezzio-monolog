@@ -4,13 +4,14 @@ namespace Geo6\Mezzio\Monolog\Handler;
 
 use Monolog\Handler\AbstractProcessingHandler;
 use Monolog\Logger;
-use function Sentry\captureEvent;
 use Sentry\Event;
 use Sentry\EventHint;
 use Sentry\Severity;
 use Sentry\State\Scope;
-use function Sentry\withScope;
 use Throwable;
+
+use function Sentry\captureEvent;
+use function Sentry\withScope;
 
 class SentryHandler extends AbstractProcessingHandler
 {
