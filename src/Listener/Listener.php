@@ -8,8 +8,9 @@ use Monolog\Logger;
 use Monolog\Processor\GitProcessor;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
-use function Sentry\init;
 use Throwable;
+
+use function Sentry\init;
 
 class Listener
 {
